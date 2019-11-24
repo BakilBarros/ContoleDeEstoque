@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/Biblioteca.Classes_Basicas" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/Biblioteca.Classes_Basicas" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:complexType name="Fornecedor">
+    <xs:sequence>
+      <xs:element name="bairro" nillable="true" type="xs:string" />
+      <xs:element name="cep" nillable="true" type="xs:string" />
+      <xs:element name="cidade" nillable="true" type="xs:string" />
+      <xs:element name="cnpj" nillable="true" type="xs:string" />
+      <xs:element name="complemento" nillable="true" type="xs:string" />
+      <xs:element name="compra" nillable="true" type="tns:ArrayOfCompra" />
+      <xs:element name="email" nillable="true" type="xs:string" />
+      <xs:element name="estado" nillable="true" type="xs:string" />
+      <xs:element name="id" type="xs:int" />
+      <xs:element name="logradouro" nillable="true" type="xs:string" />
+      <xs:element name="razaoSocial" nillable="true" type="xs:string" />
+      <xs:element name="telefone" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Fornecedor" nillable="true" type="tns:Fornecedor" />
+  <xs:complexType name="ArrayOfCompra">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Compra" nillable="true" type="tns:Compra" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfCompra" nillable="true" type="tns:ArrayOfCompra" />
+  <xs:complexType name="Compra">
+    <xs:sequence>
+      <xs:element name="fornecedor" nillable="true" type="tns:Fornecedor" />
+      <xs:element name="materiaPrima" nillable="true" type="tns:MateriaPrima" />
+      <xs:element name="preco" type="xs:double" />
+      <xs:element name="quantidade" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Compra" nillable="true" type="tns:Compra" />
+  <xs:complexType name="MateriaPrima">
+    <xs:sequence>
+      <xs:element name="compra" nillable="true" type="tns:ArrayOfCompra" />
+      <xs:element name="descricao" nillable="true" type="xs:string" />
+      <xs:element name="estoqueAtual" type="xs:int" />
+      <xs:element name="id" type="xs:int" />
+      <xs:element name="lote" nillable="true" type="xs:string" />
+      <xs:element name="nome" nillable="true" type="xs:string" />
+      <xs:element name="produto" nillable="true" type="tns:ArrayOfProduto" />
+      <xs:element name="validade" type="xs:dateTime" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="MateriaPrima" nillable="true" type="tns:MateriaPrima" />
+  <xs:complexType name="ArrayOfProduto">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Produto" nillable="true" type="tns:Produto" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfProduto" nillable="true" type="tns:ArrayOfProduto" />
+  <xs:complexType name="Produto">
+    <xs:sequence>
+      <xs:element name="descricao" nillable="true" type="xs:string" />
+      <xs:element name="id" type="xs:int" />
+      <xs:element name="materiaPrima" nillable="true" type="tns:ArrayOfMateriaPrima" />
+      <xs:element name="nome" nillable="true" type="xs:string" />
+      <xs:element name="unidadeFornecimento" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Produto" nillable="true" type="tns:Produto" />
+  <xs:complexType name="ArrayOfMateriaPrima">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="MateriaPrima" nillable="true" type="tns:MateriaPrima" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfMateriaPrima" nillable="true" type="tns:ArrayOfMateriaPrima" />
+  <xs:complexType name="ArrayOfFornecedor">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Fornecedor" nillable="true" type="tns:Fornecedor" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfFornecedor" nillable="true" type="tns:ArrayOfFornecedor" />
+</xs:schema>

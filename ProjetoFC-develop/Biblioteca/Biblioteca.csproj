@@ -1,0 +1,96 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{185F1922-64A1-4CE7-9D93-3B21BF475CB5}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Biblioteca</RootNamespace>
+    <AssemblyName>Biblioteca</AssemblyName>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Classes Basicas\EntidadeDestino.cs" />
+    <Compile Include="Classes Basicas\EntidadeSaida.cs" />
+    <Compile Include="Classes Basicas\EntidadeEntrada.cs" />
+    <Compile Include="Classes Basicas\EntidadeProduto.cs" />
+    <Compile Include="Classes Basicas\EntidadeEstoque.cs" />
+    <Compile Include="Classes Basicas\Produto.cs" />
+    <Compile Include="Classes Basicas\Compra.cs" />
+    <Compile Include="Classes Basicas\Fornecedor.cs" />
+    <Compile Include="Classes Basicas\MateriaPrima.cs" />
+    <Compile Include="DAO\CompraDados.cs" />
+    <Compile Include="DAO\DDestino.cs" />
+    <Compile Include="DAO\DEstoque.cs" />
+    <Compile Include="DAO\DMovimentacao.cs" />
+    <Compile Include="DAO\DProduto.cs" />
+    <Compile Include="DAO\FormulaDados.cs" />
+    <Compile Include="DAO\IGerenciadorDestino.cs" />
+    <Compile Include="DAO\IGerenciadorMovimentacao.cs" />
+    <Compile Include="DAO\IGerenciadorEstoque.cs" />
+    <Compile Include="DAO\IGerenciadorProduto.cs" />
+    <Compile Include="DAO\InterfaceCompra.cs" />
+    <Compile Include="DAO\InterfaceFormula.cs" />
+    <Compile Include="DAO\InterfaceMateriaPrima.cs" />
+    <Compile Include="DAO\MateriaPrimaDados.cs" />
+    <Compile Include="DAO\FornecedorDados.cs" />
+    <Compile Include="DAO\InterfaceFornecedor.cs" />
+    <Compile Include="DAO\InterfaceProduto.cs" />
+    <Compile Include="DAO\ProdutoDados.cs" />
+    <Compile Include="Negocio\CompraNegocio.cs" />
+    <Compile Include="Negocio\FormulaNegocio.cs" />
+    <Compile Include="Negocio\MateriaPrimaNegocio.cs" />
+    <Compile Include="Negocio\FornecedorNegocio.cs" />
+    <Compile Include="Negocio\NDestino.cs" />
+    <Compile Include="Negocio\NMovimentacao.cs" />
+    <Compile Include="Negocio\NProduto.cs" />
+    <Compile Include="Negocio\NEstoque.cs" />
+    <Compile Include="Negocio\ProdutoNegocio.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Util\GerenciadorConexaoSqlServer.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Classes Basicas\ClassDiagram.cd" />
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
